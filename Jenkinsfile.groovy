@@ -28,7 +28,7 @@ pipeline {
 
 			steps {
 
-				sh " docker build ."
+				sh " docker build . -t custom"
 				sh " docker run -dit -p 8181:8080 custom "
 			}
 		}	
