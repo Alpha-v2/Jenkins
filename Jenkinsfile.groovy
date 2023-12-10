@@ -1,10 +1,7 @@
 Pipeline {
 
 	agent{label 'build_server'}
-	triggers {
-        pollSCM('') //Empty quotes tells it to build on a push
-    }
-
+	
 	Stages{
 
 		Stage(" git repo "){
