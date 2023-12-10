@@ -32,11 +32,7 @@ pipeline {
 				sh " docker run -dit -p 8181:8080 custom "
 			}
 
-			steps {
-                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
-                    sh "exit 1"
-                }
-		}	
+			
 
 
 		}
