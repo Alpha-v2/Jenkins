@@ -1,6 +1,9 @@
 pipeline {
 
-	agent {label 'build_server'}
+	agent
+	triggers {
+        pollSCM('') //Empty quotes tells it to build on a push
+    }
 
 	stages {
 
@@ -18,25 +21,13 @@ pipeline {
 		stage (" Build the package"){
 
 			steps {
-                                
+
 				sh " mvn clean install"
 			}
 		}
 
-		stage (" Run Docker container"){
-
-			steps {
-
-				sh " docker build . -t custom"
-				sh " docker run -dit -p 8181:8080 custom "
-			}
-		}	
+		
 
 
 		}
-
-
-
-
-
-	}
+}
