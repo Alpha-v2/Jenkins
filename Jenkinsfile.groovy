@@ -1,12 +1,15 @@
-Pipeline{
+pipeline {
 
-	agent{label 'build_server'}
-	
-	Stages{
+	agent
+	triggers {
+        pollSCM('') //Empty quotes tells it to build on a push
+    }
 
-		Stage(" git repo "){
+	stages {
 
-			Steps{
+		stage (" git repo "){
+
+			steps {
 
 				git branch: 'master', url: 'https://github.com/Alpha-v2/Jenkins.git'
 			}
@@ -15,17 +18,17 @@ Pipeline{
 
 				}
 
-		Stage(" Build the package"){
+		stage (" Build the package"){
 
-			Steps{
+			steps {
 
 				sh " mvn clean install"
 			}
 		}
 
-		Stage(" Run Docker container"){
+		stage (" Run Docker container"){
 
-			Steps{
+			steps {
 
 				sh " docker build --tag custom"
 				sh " docker run -dit -p 82:8080 custom Apache "
