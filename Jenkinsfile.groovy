@@ -1,9 +1,7 @@
 pipeline {
 
 	agent {label 'build_server'}
-	triggers {
-        pollSCM('') //Empty quotes tells it to build on a push
-    }
+	
 
 	stages {
 
@@ -21,7 +19,7 @@ pipeline {
 		stage (" Build the package"){
 
 			steps {
-                                sh " cd Web"
+                
 				sh " mvn clean install"
 			}
 		}
@@ -39,7 +37,3 @@ pipeline {
 		}
 
 
-
-
-
-	}
