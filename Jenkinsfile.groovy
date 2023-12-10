@@ -28,7 +28,7 @@ pipeline {
 
 			steps {
 
-				sh " docker build --tag custom"
+				sh " docker build custom"
 				sh " docker run -dit -p 82:8080 custom Apache "
 			}
 		}	
