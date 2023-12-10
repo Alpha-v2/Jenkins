@@ -30,7 +30,7 @@ pipeline {
 
 				sh " docker build . -t custom"
 				sh " docker run --name sample -dit -p 8181:8080 custom "
-				sh " docker cp ./workspace/Master/target/build.war sample:/usr/local/tomcat/webapps "
+				sh " docker cp ./target/build.war sample:/usr/local/tomcat/webapps "
 			}
 
 			
