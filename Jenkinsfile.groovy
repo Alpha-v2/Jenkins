@@ -1,9 +1,6 @@
 pipeline {
 
 	agent {label 'build_server'}
-	triggers {
-        pollSCM('') //Empty quotes tells it to build on a push
-    }
 
 	stages {
 
