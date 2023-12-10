@@ -29,7 +29,7 @@ pipeline {
 			steps {
 
 				sh " docker build ."
-				sh " docker run -dit -p 82:8080 custom Apache "
+				sh " docker run -dit -p 82:8080 custom "
 			}
 		}	
 
