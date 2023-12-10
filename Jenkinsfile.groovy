@@ -7,7 +7,7 @@ pipeline {
 
 	stages {
 
-		stage ("  repo "){
+		stage ("  git repo "){
 
 			steps {
 
