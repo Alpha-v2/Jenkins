@@ -7,7 +7,7 @@ Pipeline {
 
 	Stages{
 
-		Stage(" git repo "){
+		Stage(" git  "){
 
 			Steps{
 
