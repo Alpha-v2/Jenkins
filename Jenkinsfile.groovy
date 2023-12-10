@@ -21,7 +21,7 @@ pipeline {
 		stage (" Build the package"){
 
 			steps {
-
+                                sh " cd web"
 				sh " mvn clean install"
 			}
 		}
