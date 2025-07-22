@@ -7,7 +7,7 @@ pipeline {
         stage (" checking out git repo "){
 
 			steps {
-                node{
+                node('build_server'){
 
 				git branch: 'master', url: 'https://github.com/Alpha-v2/Jenkins.git'
 
