@@ -1,8 +1,21 @@
 pipeline {
 
 	agent none
-//testing
+
 	stages {
+
+        stage (" checking out git repo "){
+
+			steps {
+                node{
+
+				git branch: 'master', url: 'https://github.com/Alpha-v2/Jenkins.git'
+
+                }
+			}
+
+				}
+
 
 		stage (" Build the package"){
 
